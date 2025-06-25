@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.font-serif {
+  font-family: var(--font-playfair);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+  @apply bg-gradient-to-r from-rose-gold-600 to-champagne-600 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-500 hover:from-rose-gold-700 hover:to-champagne-700 hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-white border-2 border-elegant-200 text-elegant-700 px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-500 hover:bg-cream-50 hover:border-rose-gold-300 hover:shadow-xl hover:text-rose-gold-700 transform hover:-translate-y-1;
+}
+
+/* Card hover animations */
+.product-card {
+  @apply transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-3 hover:scale-105;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+  box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  @apply transition-all duration-700 ease-out;
+}
+
+.product-card:hover .product-image {
+  @apply scale-110;
+}
+
+/* Shimmer effect for loading */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #e26c44, #f1c27d, #eec195);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero section styling */
+.hero-bg {
+  background: linear-gradient(135deg, rgba(254, 252, 249, 0.9) 0%, rgba(254, 248, 243, 0.8) 50%, rgba(253, 242, 233, 0.9) 100%);
+}
+
+/* Elegant decorative elements */
+.elegant-border {
+  position: relative;
+}
+
+.elegant-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e26c44, transparent);
+}
+
+/* Premium glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Or add these CSS custom properties to your globals.css: */
+:root {
+  --rose-gold-50: #fef7f0;
+  --rose-gold-100: #fdeee1;
+  --rose-gold-200: #fad5c2;
+  --rose-gold-300: #f7b693;
+  --rose-gold-400: #f38e64;
+  --rose-gold-500: #e67e22;
+  --rose-gold-600: #d35400;
+  --rose-gold-700: #b8450e;
+  --rose-gold-800: #9a3412;
+  --rose-gold-900: #7c2d12;
+  
+  --champagne-50: #fefdf8;
+  --champagne-100: #fdfbf0;
+  --champagne-200: #fbf6e1;
+  --champagne-300: #f8f0c2;
+  --champagne-400: #f5ea93;
+  --champagne-500: #f1c40f;
+  --champagne-600: #f39c12;
+  --champagne-700: #e67e22;
+  --champagne-800: #d35400;
+  --champagne-900: #b7472a;
+}
+
+/* Chat widget specific animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(230, 126, 34, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 126, 34, 0.6);
+  }
+}
+
+.chat-pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Scrollbar styling for chat */
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #e67e22, #f39c12);
+  border-radius: 10px;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
